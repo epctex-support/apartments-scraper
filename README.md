@@ -54,8 +54,8 @@ The actor optimized to run blazing fast and scrape many as listings as possible.
 
 {
   "startUrls":[
-    {"url":"https://www.apartments.com/sobe-apartment-rentals-miami-beach-fl/26xc7jb/"},
-    {"url":"https://www.apartments.com/apartments/miami-fl/student-housing/"}
+    "https://www.apartments.com/sobe-apartment-rentals-miami-beach-fl/26xc7jb/",
+    "https://www.apartments.com/apartments/miami-fl/student-housing/"
   ],
   "proxy":{
     "useApifyProxy":true
@@ -102,41 +102,16 @@ The structure of each item in Apartments listings looks like this:
     "postalCode": "33161",
     "streedAddress": "12016 NE 16th Ave"
   },
-  "rating": 4,
+  "rating": 3.7,
   "isVerified": true,
   "rent": {
-    "min": 1545,
-    "max": 1855
+    "min": null,
+    "max": null
   },
   "beds": "1 - 3 bd",
   "baths": "1 - 2 ba",
   "sqft": "733 - 1,319 sq ft",
   "transitAndPOI": [
-    {
-      "name": "Johnson & Wales University, Florida Campus",
-      "drive": "4 min",
-      "distance": "0.8 mi"
-    },
-    {
-      "name": "Barry University",
-      "drive": "9 min",
-      "distance": "2.9 mi"
-    },
-    {
-      "name": "Florida International University",
-      "drive": "11 min",
-      "distance": "3.9 mi"
-    },
-    {
-      "name": "Golden Glades",
-      "drive": "14 min",
-      "distance": "5.8 mi"
-    },
-    {
-      "name": "Opa-Locka",
-      "drive": "17 min",
-      "distance": "6.7 mi"
-    },
     {
       "name": "Strip Center at 11806-11890 Biscayne Blvd",
       "drive": "4 min",
@@ -176,254 +151,282 @@ The structure of each item in Apartments listings looks like this:
       "name": "Jungle Island",
       "drive": "22 min",
       "distance": "9.7 mi"
-    },
-    {
-      "name": "Miami International",
-      "drive": "33 min",
-      "distance": "15.2 mi"
-    },
-    {
-      "name": "Fort Lauderdale–Hollywood International",
-      "drive": "29 min",
-      "distance": "15.3 mi"
     }
   ],
   "scores": {
     "walkScore": 88,
     "transitScore": 0
   },
-  "neighborhoodDescription": "Located in the heart of southeastern Florida, Miami is a vibrant city with a distinct international appeal. Miami’s diversity is evident in its many neighborhoods, from the artistic allure of Wynwood and the financial prowess of Brickell to the dance halls of Little Havana and the tranquil vibe of Coconut Grove. Downtown Miami is at the city’s core, boasting the third-tallest skyline in the U.S. alongside the picturesque Biscayne Bay.\n                        \nMiami’s rental options are also incredibly diverse, from luxury apartments and beachfront condos in the city center to cozy townhomes and spacious houses in the suburbs. Miami offers plenty to do outside the home. Residents and visitors alike enjoy perusing the extensive exhibits at the Perez Art Museum, Frost Museum of Science, Miami Children’s Museum, and Vizcaya Museum and Gardens. Miami loves their sports, cheering on the MLB Marlins at Marlins Park, NBA Heat at American Airlines Arena, and NFL Dolphins at Hardrock Stadium in Miami Gardens.",
+  "neighborhoodDescription": "Located in the heart of southeastern Florida, Miami is a vibrant city with a distinct international appeal. Miami’s diversity is evident in its many neighborhoods, from the artistic allure of Wynwood and the financial prowess of Brickell to the dance halls of Little Havana and the tranquil vibe of Coconut Grove. Downtown Miami is at the city’s core, boasting the third-tallest skyline in the U.S. alongside the picturesque Biscayne Bay.\n                        Miami’s rental options are also incredibly diverse, from luxury apartments and beachfront condos in the city center to cozy townhomes and spacious houses in the suburbs. Miami offers plenty to do outside the home. Residents and visitors alike enjoy perusing the extensive exhibits at the Perez Art Museum, Frost Museum of Science, Miami Children’s Museum, and Vizcaya Museum and Gardens. Miami loves their sports, cheering on the MLB Marlins at Marlins Park, NBA Heat at American Airlines Arena, and NFL Dolphins at Hardrock Stadium in Miami Gardens.\n                \n                \n                    Learn More About Miami",
   "schools": {
     "public": [
       {
         "type": "Public Elementary & Middle School",
         "name": "David Lawrence Jr. K-8 Center",
-        "grades": "Grades PK-8",
-        "numberOfStudents": "1,507 Students",
-        "schoolPhone": "(305) 354-2600"
+        "grades": "PK-8",
+        "numberOfStudents": "1,507"
       },
       {
         "type": "Public Middle School",
         "name": "North Miami Middle School",
-        "grades": "Grades 6-8",
-        "numberOfStudents": "945 Students",
-        "schoolPhone": "(305) 891-5611"
+        "grades": "6-8",
+        "numberOfStudents": "945"
       },
       {
         "type": "Public High School",
         "name": "North Miami Senior High School",
-        "grades": "Grades 9-12",
-        "numberOfStudents": "2,464 Students",
-        "schoolPhone": "(305) 891-6590"
+        "grades": "9-12",
+        "numberOfStudents": "2,464"
       },
       {
         "type": "Public High School",
         "name": "Alonzo And Tracy Mourning Senior High Biscayne Bay Campus",
-        "grades": "Grades 9-12",
-        "numberOfStudents": "1,699 Students",
-        "schoolPhone": "(305) 919-2000"
+        "grades": "9-12",
+        "numberOfStudents": "1,699"
       }
     ],
     "private": [
       {
         "type": "Private Elementary School",
         "name": "El Shaddai School",
-        "grades": "Grades K-3",
-        "numberOfStudents": "",
-        "schoolPhone": "(305) 891-8966"
+        "grades": "K-3",
+        "numberOfStudents": ""
       },
       {
         "type": "Private Elementary, Middle & High School",
         "name": "Montessori School Of North Miami",
-        "grades": "Grades K-12",
-        "numberOfStudents": "",
-        "schoolPhone": "(305) 893-5994"
+        "grades": "K-12",
+        "numberOfStudents": ""
       },
       {
         "type": "Private Elementary, Middle & High School",
         "name": "Montessori School Of North Miami",
-        "grades": "Grades K-12",
-        "numberOfStudents": "",
-        "schoolPhone": "(305) 893-5994"
+        "grades": "K-12",
+        "numberOfStudents": ""
       },
       {
         "type": "Private Elementary School",
         "name": "Von Wedel Montessori School",
-        "grades": "Grades PK-2",
-        "numberOfStudents": "135 Students",
-        "schoolPhone": "(954) 473-4400"
+        "grades": "PK-2",
+        "numberOfStudents": "135"
       }
     ]
   },
-  "fees": {
-    "oneTimeFees": {
-      "Admin Fee": "$325",
-      "Application Fee": "$125",
-      "Cat Fee": "$500",
-      "Dog Fee": "$500"
+  "fees": [
+    {
+      "title": "Pet Policies",
+      "policies": [
+        {
+          "header": "Dogs Allowed",
+          "values": [
+            {
+              "key": "Pet Limit",
+              "value": "2"
+            },
+            {
+              "key": "Weight limit",
+              "value": "150 lb"
+            },
+            {
+              "key": "Pet interview",
+              "value": "Not required"
+            },
+            {
+              "key": "Spayed/Neutered",
+              "value": "Not required"
+            },
+            {
+              "key": "Declawed",
+              "value": "Not required"
+            },
+            {
+              "key": "Monthly pet rent",
+              "value": "$25"
+            },
+            {
+              "key": "One time Fee",
+              "value": "$525"
+            }
+          ]
+        },
+        {
+          "header": "Cats Allowed",
+          "values": [
+            {
+              "key": "Pet Limit",
+              "value": "2"
+            },
+            {
+              "key": "Weight limit",
+              "value": "50 lb"
+            },
+            {
+              "key": "Pet interview",
+              "value": "Not required"
+            },
+            {
+              "key": "Spayed/Neutered",
+              "value": "Not required"
+            },
+            {
+              "key": "Declawed",
+              "value": "Not required"
+            },
+            {
+              "key": "Monthly pet rent",
+              "value": "$25"
+            },
+            {
+              "key": "One time Fee",
+              "value": "$525"
+            }
+          ]
+        }
+      ]
     },
-    "monthlyFees": {
-      "Cat Rent": "$25",
-      "Dog Rent": "$25"
+    {
+      "title": "Fees",
+      "policies": [
+        {
+          "header": "Parking",
+          "values": [
+            {
+              "key": "Surface Lot",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "header": "Other Fees",
+          "values": [
+            {
+              "key": "Admin Fee",
+              "value": "$325"
+            },
+            {
+              "key": "Application Fee",
+              "value": "$125"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Details",
+      "policies": [
+        {
+          "header": "Lease Options",
+          "values": [
+            {
+              "key": "7 months, 9 months, 12 months, 15 months",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "header": "Property Information",
+          "values": [
+            {
+              "key": "Built in 2013",
+              "value": ""
+            },
+            {
+              "key": "240 units/3 stories",
+              "value": ""
+            }
+          ]
+        }
+      ]
     }
-  },
-  "description": "About Advenir at Biscayne Shores\n                Surround yourself in convenience and comfort at Advenir At Biscayne Shores Apartments in North Miami, FL. Our premier apartment homes offer convenient location combined with unmatched community amenities and luxurious apartment features that will create the perfect home for your lifestyle! Advenir at Biscayne Shores Apartments enjoys a premier location right on Biscayne Boulevard with immediate access to major highways and roads, great shopping malls, a host of restaurants and many other entertainment and recreational options to choose from.\n\n                \n                    \n                        View Property Website",
+  ],
+  "description": "About Advenir at Biscayne Shores\n                            Surround yourself in convenience and comfort at Advenir At Biscayne Shores Apartments in North Miami, FL. Our premier apartment homes offer convenient location combined with unmatched community amenities and luxurious apartment features that will create the perfect home for your lifestyle! Advenir at Biscayne Shores Apartments enjoys a premier location right on Biscayne Boulevard with immediate access to major highways and roads, great shopping malls, a host of restaurants and many other entertainment and recreational options to choose from.\n\n                    \n                    Advenir at Biscayne Shores is an apartment located in Miami/Dade County, the 33161 ZIP Code, and the Miami-Dade attendance zone.\n\n\n\n    \n        \n            \n                Unique Features\n                \n                    \n                            \n                                Granite countertop\n                            \n                            \n                                Individual Climate Control\n                            \n                            \n                                Outdoor Grills\n                            \n                            \n                                Pet Friendly\n                            \n                            \n                                Walk in Closet\n                            \n                            \n                                Washer/Dryer",
   "amenities": [
     {
-      "title": "Unique Features",
+      "title": "Community Amenities",
       "value": [
-        "Granite countertop",
-        "Individual Climate Control",
-        "Outdoor Grills",
-        "Pet Friendly",
-        "Walk in Closet",
-        "Washer/Dryer"
-      ]
-    },
-    {
-      "title": "Pet Policy",
-      "value": [
-        "Comments: Dog",
-        "$25 Monthly Pet Rent",
-        "$500 Fee",
-        "150 lb Weight Limit",
-        "2 Pet Limit",
-        "Comments: Cat",
-        "$25 Monthly Pet Rent",
-        "$500 Fee",
-        "50 lb Weight Limit",
-        "2 Pet Limit"
-      ]
-    },
-    {
-      "title": "Parking",
-      "value": []
-    },
-    {
-      "title": "Property Information",
-      "value": [
-        "Built in 2013",
-        "240 Units/3 Stories"
-      ]
-    },
-    {
-      "title": "Lease Length",
-      "value": [
-        "7 months, 9 months, 12 months, 15 months"
-      ]
-    },
-    {
-      "title": "Interior",
-      "value": [
+        "Pool",
+        "Fitness Center",
+        "Clubhouse",
         "Business Center",
-        "Clubhouse"
-      ]
-    },
-    {
-      "title": "Fitness & Recreation",
-      "value": [
+        "Business Center",
+        "Clubhouse",
         "Fitness Center",
         "Pool"
       ]
     },
     {
-      "title": "Features",
+      "title": "Apartment Features",
       "value": [
+        "Washer/Dryer - In Unit",
+        "Air Conditioning",
+        "Dishwasher",
+        "High Speed Internet Access",
         "High Speed Internet Access",
         "Washer/Dryer - In Unit",
         "Air Conditioning",
-        "Heating"
-      ]
-    },
-    {
-      "title": "Kitchen",
-      "value": [
+        "Heating",
         "Dishwasher",
         "Granite Countertops",
-        "Range"
-      ]
-    },
-    {
-      "title": "Living Space",
-      "value": [
+        "Range",
         "Walk-In Closets"
       ]
     }
   ],
   "contact": {
-    "phone": "833-683-3245833-683-3245",
-    "name": "Office Hours At Advenir at Biscayne Shores"
+    "phone": "833-683-3245",
+    "name": ""
   },
   "models": [
     {
-      "floorPlan": "https://images1.apartments.com/i2/7k8cKcd43n4N5ilGGuFK0O9_Rprd9BsFHMxqEtvqwZE/117/advenir-at-biscayne-shores-miami-fl-alhambra.jpg?p=1",
       "modelName": "Alhambra",
-      "rentLabel": "$1,545 – $1,855",
+      "rentLabel": "Call for Rent",
       "details": [
         "1 bed",
         "1 bath",
         "733 sq ft",
-        "$450 Deposit"
+        "$450 deposit",
+        "Not Available"
       ],
-      "leaseOptions": "$450 Deposit",
-      "availability": "3 Available units",
-      "units": [
-        {
-          "type": "Unit 07-104",
-          "price": "$1,545",
-          "sqft": "733",
-          "availability": "Now"
-        },
-        {
-          "type": "Unit 04-307",
-          "price": "$1,570",
-          "sqft": "733",
-          "availability": "Now"
-        },
-        {
-          "type": "Unit 05-106",
-          "price": "$1,705",
-          "sqft": "733",
-          "availability": "Now"
-        }
-      ]
+      "leaseOptions": "$450 deposit,\n\t\t\t\t\t\t\t\tNot Available",
+      "availability": "",
+      "units": []
     },
     {
-      "floorPlan": "https://images1.apartments.com/i2/rk5cDeh5L3NS56wrtxzl2cH7gRjLiBCArn7ii4U2S7g/117/advenir-at-biscayne-shores-miami-fl-biscayne.jpg?p=1",
       "modelName": "Biscayne",
       "rentLabel": "Call for Rent",
       "details": [
         "2 beds",
         "2 baths",
         "1,045 sq ft",
-        "$450 Deposit"
+        "$450 deposit",
+        "Not Available"
       ],
-      "leaseOptions": "$450 Deposit",
-      "availability": "Not Available",
+      "leaseOptions": "$450 deposit,\n\t\t\t\t\t\t\t\tNot Available",
+      "availability": "",
       "units": []
     },
     {
-      "floorPlan": "https://images1.apartments.com/i2/YIfbdr284QhkY7JjBZj-YHY1jOfnoxiye5WhH7374yI/117/advenir-at-biscayne-shores-miami-fl-cordova.jpg?p=1",
       "modelName": "Cordova",
       "rentLabel": "Call for Rent",
       "details": [
         "3 beds",
         "2 baths",
         "1,319 sq ft",
-        "$450 Deposit"
+        "$450 deposit",
+        "Not Available"
       ],
-      "leaseOptions": "$450 Deposit",
-      "availability": "Not Available",
+      "leaseOptions": "$450 deposit,\n\t\t\t\t\t\t\t\tNot Available",
+      "availability": "",
       "units": []
     }
   ],
-  "scrapedAt": "2021-03-20T21:12:39.633Z",
+  "scrapedAt": "2021-07-16T21:01:12.172Z",
   "photos": [
     "https://images1.apartments.com/i2/EINbwwVCywBvRzfr0wOeSNFQ6jSQJc4UezLuLO52rS4/111/advenir-at-biscayne-shores-miami-fl-open-concept-layout-living-room-and-kitc.jpg?p=1",
+    "https://images1.apartments.com/m2/WSGxFMZ418LzK9QvL24lEEUeqG4Yp-GL0DvZ_XFBqjM/H420W630/advenir-at-biscayne-shores-miami-fl-map-image-of-the-property.jpg?p=1",
     "https://images1.apartments.com/i2/HDQ2izk8FCyQ0-8Fq2Ck0bQTwCc-Y4HgzWPjuyQwgv0/117/advenir-at-biscayne-shores-miami-fl-fully-equipped-kitchen-with-oven-range-a.jpg?p=1",
     "https://images1.apartments.com/i2/ejnF5a-RJCOTbORTa08V-HuRKeqAZPzUpx9HRjTChPA/117/advenir-at-biscayne-shores-miami-fl-fully-equipped-kitchen-with-dishwasher-o.jpg?p=1",
-    "https://images1.apartments.com/i2/OFRv1Hy3RBPenUYtmgQJ29EkZQAkqCmlMeH5KsPIjz0/117/advenir-at-biscayne-shores-miami-fl-fully-equipped-kitchen-with-dishwasher-o.jpg?p=1",
-    "https://images1.apartments.com/i2/WCeNeGB-eE1pKScjrHbd6V58pyMcviN3Bo4aS1NRrQ0/117/advenir-at-biscayne-shores-miami-fl-fully-equipped-kitchen-with-oven-range-a.jpg?p=1"
+    "https://images1.apartments.com/i2/OFRv1Hy3RBPenUYtmgQJ29EkZQAkqCmlMeH5KsPIjz0/117/advenir-at-biscayne-shores-miami-fl-fully-equipped-kitchen-with-dishwasher-o.jpg?p=1"
   ]
 }
 ```
