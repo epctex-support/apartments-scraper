@@ -19,7 +19,6 @@ The Apartments data scraper supports the following features:
 This scraper is under active development. If you have any feature requests you can create an issue from [here](https://github.com/tugkan/apartments-scraper/issues).
 
 ### Incoming Changes
-- Retrieve all the photos of a property.
 - Integrate `startPage` field.
 - Scrape better contact, vendor and agent names.
 - Scrape more information that can be retrieved from detail pages. If you have any requests please request it from [here](https://github.com/tugkan/apartments-scraper/issues).
