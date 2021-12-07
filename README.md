@@ -14,31 +14,31 @@ The Apartments data scraper supports the following features:
 
 - Limit the results by page or amount of property. - If you don't want to get all the results but a specific amount you can limit it.
 
-
 ## Bugs, fixes, updates and changelog
+
 This scraper is under active development. If you have any feature requests you can create an issue from [here](https://github.com/tugkan/apartments-scraper/issues).
 
 ### Incoming Changes
-- Integrate `startPage` field.
-- Scrape better contact, vendor and agent names.
-- Scrape more information that can be retrieved from detail pages. If you have any requests please request it from [here](https://github.com/tugkan/apartments-scraper/issues).
 
+-   Integrate `startPage` field.
 
 ## Input Parameters
 
 The input of this scraper should be JSON containing the list of pages on Apartments that should be visited. Required fields are:
 
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| startUrls | Array | (optional) List of Apartments URLs. You should only provide list or property detail URLs |
-| search | String | (optional) Location keyword that you would like to search the properties in. |
-| endPage | Integer | (optional) Final number of page that you want to scrape. Default is `Infinite`. |
-| maxItems | Integer | (optional) You can limit scraped properties. This should be useful when you search through the big lists.|
-| proxy | Object | Proxy configuration |
-| extendOutputFunction | String | (optional) Function that takes a JQuery handle ($) as argument and returns object with data |
+| Field                | Type    | Description                                                                                               |
+| -------------------- | ------- | --------------------------------------------------------------------------------------------------------- |
+| startUrls            | Array   | (optional) List of Apartments URLs. You should only provide list or property detail URLs                  |
+| maxItems             | Integer | (optional) You can limit scraped properties. This should be useful when you search through the big lists. |
+| endPage              | Integer | (optional) Final number of page that you want to scrape. Default is `Infinite`.                           |
+| search               | String  | (optional) Location keyword that you would like to search the properties in.                              |
+| proxy                | Object  | Proxy configuration                                                                                       |
+| extendOutputFunction | String  | (optional) Function that takes a JQuery handle ($) as argument and returns object with data               |
+
 This solution requires the use of **Proxy servers**, either your own proxy servers or you can use <a href="https://www.apify.com/docs/proxy">Apify Proxy</a>.
 
 ##### Tip
+
 When you want to have a scrape over a specific listing URL, just copy and paste the link as one of the **startUrl**.
 
 If you would like to scrape only the first page of a list then put the link for the page and have the `endPage` as 1.
@@ -46,21 +46,22 @@ If you would like to scrape only the first page of a list then put the link for 
 With the last approach that explained above you can also apply any of the filters to the search results. Go to Apartments.com, search for a location, apply filters and copy/paste the link as **startUrl**.
 
 ### Compute Unit Consumption
+
 The actor optimized to run blazing fast and scrape many as listings as possible. Therefore, it forefronts all listing detail requests. If actor doesn't block very often it'll scrape 100 listings in 1 minutes with ~0.03-0.04 compute units.
 
 ### Apartments Scraper Input example
-```json
 
+```json
 {
-  "startUrls":[
-    "https://www.apartments.com/sobe-apartment-rentals-miami-beach-fl/26xc7jb/",
-    "https://www.apartments.com/apartments/miami-fl/student-housing/"
-  ],
-  "proxy":{
-    "useApifyProxy":true
-  },
-  "endPage":1,
-  "maxItems": 100
+    "startUrls": [
+        "https://www.apartments.com/sobe-apartment-rentals-miami-beach-fl/26xc7jb/",
+        "https://www.apartments.com/apartments/miami-fl/student-housing/"
+    ],
+    "proxy": {
+        "useApifyProxy": true
+    },
+    "endPage": 1,
+    "maxItems": 100
 }
 ```
 
@@ -78,153 +79,148 @@ During the run, the actor stores results into a dataset. Each item is a separate
 You can manage the results in any languague (Python, PHP, Node JS/NPM). See the FAQ or <a href="https://www.apify.com/docs/api" target="blank">our API reference</a> to learn more about getting results from this Apartments actor.
 
 ## Scraped Apartments Properties
+
 The structure of each item in Apartments listings looks like this:
 
 ###Property Output
 
 ```json
 {
-  "id": "fbt1sms",
-  "propertyName": "Advenir at Biscayne Shores",
-  "url": "https://www.apartments.com/advenir-at-biscayne-shores-miami-fl/fbt1sms/",
+  "id": "26xc7jb",
+  "propertyName": "SoBe Apartment Rentals",
+  "url": "https://www.apartments.com/sobe-apartment-rentals-miami-beach-fl/26xc7jb",
   "breadcrumbs": [
     "Home",
     "Florida",
-    "Miami",
-    "Advenir at Biscayne Shores"
+    "Miami Beach",
+    "SoBe Apartment Rentals"
   ],
   "location": {
-    "fullAddress": "12016 NE 16th Ave Miami FL 33161",
+    "fullAddress": "907-911 Euclid Ave Miami Beach FL 33139",
     "state": "Florida",
-    "city": "Miami",
-    "neighborhood": "Miami",
-    "postalCode": "33161",
-    "streedAddress": "12016 NE 16th Ave"
+    "city": "Miami Beach",
+    "neighborhood": "Flamingo",
+    "postalCode": "33139",
+    "streedAddress": "907-911 Euclid Ave"
   },
-  "rating": 3.7,
+  "coordinates": {
+    "latitude": 25.77973,
+    "longitude": -80.13479
+  },
+  "rating": null,
   "isVerified": true,
   "rent": {
-    "min": null,
-    "max": null
+    "min": 1100,
+    "max": 1750
   },
-  "beds": "1 - 3 bd",
+  "beds": "Studio - 2 bd",
   "baths": "1 - 2 ba",
-  "sqft": "733 - 1,319 sq ft",
+  "sqft": "550 - 1,250 sq ft",
   "transitAndPOI": [
     {
-      "name": "Strip Center at 11806-11890 Biscayne Blvd",
-      "drive": "4 min",
-      "distance": "0.2 mi"
+      "name": "Strip Center at 915-943 Washington Ave",
+      "drive": "3 min",
+      "distance": "0.1 mi"
     },
     {
-      "name": "123rd Street Plaza",
-      "drive": "5 min",
-      "distance": "0.2 mi"
+      "name": "Strip Center at 124 11th St",
+      "drive": "8 min",
+      "distance": "0.4 mi"
     },
     {
-      "name": "Strip Center at 1677-1697 NE 123rd St",
-      "drive": "6 min",
-      "distance": "0.3 mi"
-    },
-    {
-      "name": "Enchanted Forest Elaine Gordon Park",
-      "drive": "4 min",
-      "distance": "1.2 mi"
-    },
-    {
-      "name": "Arch Creek Park & Nature Center",
-      "drive": "4 min",
-      "distance": "1.3 mi"
-    },
-    {
-      "name": "Oleta River State Park",
-      "drive": "11 min",
-      "distance": "3.4 mi"
-    },
-    {
-      "name": "Greynolds Park",
-      "drive": "10 min",
-      "distance": "4.0 mi"
+      "name": "Strip Center at 901-917 Alton Rd",
+      "drive": "8 min",
+      "distance": "0.4 mi"
     },
     {
       "name": "Jungle Island",
+      "drive": "8 min",
+      "distance": "3.4 mi"
+    },
+    {
+      "name": "Miami Children's Museum",
+      "drive": "9 min",
+      "distance": "3.9 mi"
+    },
+    {
+      "name": "Miami Seaquarium",
       "drive": "22 min",
-      "distance": "9.7 mi"
+      "distance": "11.2 mi"
+    },
+    {
+      "name": "Virginia Key Beach and Park",
+      "drive": "23 min",
+      "distance": "11.4 mi"
     }
   ],
   "scores": {
-    "walkScore": 88,
-    "transitScore": 0
+    "walkScore": 95,
+    "transitScore": 53
   },
-  "neighborhoodDescription": "Located in the heart of southeastern Florida, Miami is a vibrant city with a distinct international appeal. Miami’s diversity is evident in its many neighborhoods, from the artistic allure of Wynwood and the financial prowess of Brickell to the dance halls of Little Havana and the tranquil vibe of Coconut Grove. Downtown Miami is at the city’s core, boasting the third-tallest skyline in the U.S. alongside the picturesque Biscayne Bay.\n                        Miami’s rental options are also incredibly diverse, from luxury apartments and beachfront condos in the city center to cozy townhomes and spacious houses in the suburbs. Miami offers plenty to do outside the home. Residents and visitors alike enjoy perusing the extensive exhibits at the Perez Art Museum, Frost Museum of Science, Miami Children’s Museum, and Vizcaya Museum and Gardens. Miami loves their sports, cheering on the MLB Marlins at Marlins Park, NBA Heat at American Airlines Arena, and NFL Dolphins at Hardrock Stadium in Miami Gardens.\n                \n                \n                    Learn More About Miami",
+  "neighborhoodDescription": "Flamingo, also known as Flamingo/Lummus, is a vibrant neighborhood situated right in the heart of South Beach. Residents enjoy easy beach access along with plenty of exceptional restaurants, bars, museums, art galleries, shops, and the famous Art Deco Historic District. Flamingo is also adjacent to fantastic shopping on Lincoln Road.\n                        Aside from its many exciting metropolitan amenities, Flamingo offers two lush parks for residents and visitors alike to enjoy—Flamingo Park and Lummus Park. Flamingo’s prime location sits within countless additional attractions in the rest of Miami Beach as well as Downtown Miami, Brickell, and Wynwood. Getting around from Flamingo is simple with convenience to the MacArthur Causeway and I-195.\n                \n                \n                    Learn More About Flamingo",
   "schools": {
     "public": [
       {
         "type": "Public Elementary & Middle School",
-        "name": "David Lawrence Jr. K-8 Center",
+        "name": "Fienberg/Fisher K-8 Center",
         "grades": "PK-8",
-        "numberOfStudents": "1,507"
+        "numberOfStudents": "869"
       },
       {
         "type": "Public Middle School",
-        "name": "North Miami Middle School",
+        "name": "Nautilus Middle School",
         "grades": "6-8",
-        "numberOfStudents": "945"
+        "numberOfStudents": "1,032"
       },
       {
         "type": "Public High School",
-        "name": "North Miami Senior High School",
+        "name": "Miami Beach Senior High School",
         "grades": "9-12",
-        "numberOfStudents": "2,464"
-      },
-      {
-        "type": "Public High School",
-        "name": "Alonzo And Tracy Mourning Senior High Biscayne Bay Campus",
-        "grades": "9-12",
-        "numberOfStudents": "1,699"
+        "numberOfStudents": "2,340"
       }
     ],
     "private": [
       {
-        "type": "Private Elementary School",
-        "name": "El Shaddai School",
-        "grades": "K-3",
-        "numberOfStudents": ""
-      },
-      {
         "type": "Private Elementary, Middle & High School",
-        "name": "Montessori School Of North Miami",
-        "grades": "K-12",
+        "name": "Landow Yeshiva Center",
+        "grades": "PK-12",
         "numberOfStudents": ""
       },
       {
-        "type": "Private Elementary, Middle & High School",
-        "name": "Montessori School Of North Miami",
-        "grades": "K-12",
-        "numberOfStudents": ""
+        "type": "Private Middle & High School",
+        "name": "Congregation Beth Medrash Levi",
+        "grades": "7-12",
+        "numberOfStudents": "90"
+      }
+    ],
+    "colleges": [
+      {
+        "name": "AI Miami International University of Art and Design",
+        "drive": "AI Miami International University of Art and Design",
+        "distance": "4.6 mi"
       },
       {
-        "type": "Private Elementary School",
-        "name": "Von Wedel Montessori School",
-        "grades": "PK-2",
-        "numberOfStudents": "135"
+        "name": "Miami Dade College",
+        "drive": "Miami Dade College",
+        "distance": "5.4 mi"
+      },
+      {
+        "name": "University of Miami",
+        "drive": "University of Miami",
+        "distance": "11.5 mi"
       }
     ]
   },
   "fees": [
     {
-      "title": "Pet Policies",
+      "title": "Pet Policies (Pets Negotiable)",
       "policies": [
         {
           "header": "Dogs Allowed",
           "values": [
             {
-              "key": "Pet Limit",
-              "value": "2"
-            },
-            {
               "key": "Weight limit",
-              "value": "150 lb"
+              "value": "40 lb"
             },
             {
               "key": "Pet interview",
@@ -239,12 +235,8 @@ The structure of each item in Apartments listings looks like this:
               "value": "Not required"
             },
             {
-              "key": "Monthly pet rent",
-              "value": "$25"
-            },
-            {
               "key": "One time Fee",
-              "value": "$525"
+              "value": "$250"
             }
           ]
         },
@@ -252,14 +244,6 @@ The structure of each item in Apartments listings looks like this:
           "header": "Cats Allowed",
           "values": [
             {
-              "key": "Pet Limit",
-              "value": "2"
-            },
-            {
-              "key": "Weight limit",
-              "value": "50 lb"
-            },
-            {
               "key": "Pet interview",
               "value": "Not required"
             },
@@ -269,15 +253,11 @@ The structure of each item in Apartments listings looks like this:
             },
             {
               "key": "Declawed",
-              "value": "Not required"
-            },
-            {
-              "key": "Monthly pet rent",
-              "value": "$25"
+              "value": "Required"
             },
             {
               "key": "One time Fee",
-              "value": "$525"
+              "value": "$250"
             }
           ]
         }
@@ -290,7 +270,7 @@ The structure of each item in Apartments listings looks like this:
           "header": "Parking",
           "values": [
             {
-              "key": "Surface Lot",
+              "key": "Street",
               "value": ""
             }
           ]
@@ -299,12 +279,8 @@ The structure of each item in Apartments listings looks like this:
           "header": "Other Fees",
           "values": [
             {
-              "key": "Admin Fee",
-              "value": "$325"
-            },
-            {
               "key": "Application Fee",
-              "value": "$125"
+              "value": "$100"
             }
           ]
         }
@@ -314,10 +290,22 @@ The structure of each item in Apartments listings looks like this:
       "title": "Details",
       "policies": [
         {
-          "header": "Lease Options",
+          "header": "Utilities Included",
           "values": [
             {
-              "key": "7 months, 9 months, 12 months, 15 months",
+              "key": "Gas",
+              "value": ""
+            },
+            {
+              "key": "Water",
+              "value": ""
+            },
+            {
+              "key": "Trash Removal",
+              "value": ""
+            },
+            {
+              "key": "Sewer",
               "value": ""
             }
           ]
@@ -326,11 +314,15 @@ The structure of each item in Apartments listings looks like this:
           "header": "Property Information",
           "values": [
             {
-              "key": "Built in 2013",
+              "key": "Built in 1936",
               "value": ""
             },
             {
-              "key": "240 units/3 stories",
+              "key": "16 units/2 stories",
+              "value": ""
+            },
+            {
+              "key": "Furnished",
               "value": ""
             }
           ]
@@ -338,94 +330,135 @@ The structure of each item in Apartments listings looks like this:
       ]
     }
   ],
-  "description": "About Advenir at Biscayne Shores\n                            Surround yourself in convenience and comfort at Advenir At Biscayne Shores Apartments in North Miami, FL. Our premier apartment homes offer convenient location combined with unmatched community amenities and luxurious apartment features that will create the perfect home for your lifestyle! Advenir at Biscayne Shores Apartments enjoys a premier location right on Biscayne Boulevard with immediate access to major highways and roads, great shopping malls, a host of restaurants and many other entertainment and recreational options to choose from.\n\n                    \n                    Advenir at Biscayne Shores is an apartment located in Miami/Dade County, the 33161 ZIP Code, and the Miami-Dade attendance zone.\n\n\n\n    \n        \n            \n                Unique Features\n                \n                    \n                            \n                                Granite countertop\n                            \n                            \n                                Individual Climate Control\n                            \n                            \n                                Outdoor Grills\n                            \n                            \n                                Pet Friendly\n                            \n                            \n                                Walk in Closet\n                            \n                            \n                                Washer/Dryer",
+  "description": "About SoBe Apartment Rentals\n                        Welcome to South Beach Rental Apartments, where you can find an affordable luxury apartment. Our leasing specialists will show you a variety of apartments in your price range. We have full service buildings with full service amenities. We accept pets. We will work with all credit situations. Let South Beach Rental Apartments find your new home and make your move a more pleasurable experience. *Prices Subject to Change Based on Availability*\n\n                SoBe Apartment Rentals is an apartment located in Miami/Dade County, the 33139 ZIP Code, and the Miami-Dade attendance zone.",
   "amenities": [
     {
       "title": "Community Amenities",
       "value": [
         "Pool",
         "Fitness Center",
-        "Clubhouse",
-        "Business Center",
-        "Business Center",
-        "Clubhouse",
+        "Laundry Facilities",
+        "Furnished Units Available",
+        "Laundry Facilities",
+        "Maintenance on site",
+        "Furnished Units Available",
+        "Elevator",
         "Fitness Center",
-        "Pool"
+        "Pool",
+        "Gated",
+        "Sundeck",
+        "Grill",
+        "Picnic Area"
       ]
     },
     {
       "title": "Apartment Features",
       "value": [
-        "Washer/Dryer - In Unit",
         "Air Conditioning",
         "Dishwasher",
         "High Speed Internet Access",
+        "Hardwood Floors",
         "High Speed Internet Access",
-        "Washer/Dryer - In Unit",
         "Air Conditioning",
         "Heating",
+        "Ceiling Fans",
+        "Tub/Shower",
         "Dishwasher",
-        "Granite Countertops",
+        "Kitchen",
         "Range",
-        "Walk-In Closets"
+        "Refrigerator",
+        "Hardwood Floors",
+        "Tile Floors",
+        "Den",
+        "Walk-In Closets",
+        "Balcony",
+        "Yard",
+        "Garden"
       ]
     }
   ],
   "contact": {
-    "phone": "833-683-3245",
+    "phone": "+1-786-623-5446",
+    "logo": "https://images1.apartments.com/i2/MzLghRW57B06n9LwsCwa86cNW9bM-0BifS3NxF7_nxs/115/renters-paradise-realty-inc-logo.jpg",
     "name": ""
   },
   "models": [
     {
-      "modelName": "Alhambra",
-      "rentLabel": "Call for Rent",
+      "modelName": "Studio",
+      "rentLabel": "$1,100 – $1,200",
+      "details": [
+        "Studio",
+        "1 bath",
+        "550 sq ft",
+        "$1,200 deposit"
+      ],
+      "leaseOptions": "$1,200 deposit",
+      "availability": "1 Available unit",
+      "units": [
+        {
+          "type": "Unit 10",
+          "price": "$1,100",
+          "sqft": "550",
+          "availability": "Soon"
+        }
+      ]
+    },
+    {
+      "modelName": "1 Bed/1 Bath",
+      "rentLabel": "$1,200 – $1,300",
       "details": [
         "1 bed",
         "1 bath",
-        "733 sq ft",
-        "$450 deposit",
-        "Not Available"
+        "685 – 875 sq ft",
+        "12 Month Lease",
+        "Available Soon"
       ],
-      "leaseOptions": "$450 deposit,\n\t\t\t\t\t\t\t\tNot Available",
+      "leaseOptions": "12 Month Lease,\n\t\t\t\t\t\t\t\tAvailable Soon",
       "availability": "",
       "units": []
     },
     {
-      "modelName": "Biscayne",
-      "rentLabel": "Call for Rent",
+      "modelName": "1 Bed/1 Bath",
+      "rentLabel": "$1,300",
+      "details": [
+        "1 bed",
+        "1 bath",
+        "700 sq ft",
+        "$1,300 deposit"
+      ],
+      "leaseOptions": "$1,300 deposit",
+      "availability": "1 Available unit",
+      "units": [
+        {
+          "type": "Unit 9",
+          "price": "$1,300",
+          "sqft": "700",
+          "availability": "Soon"
+        }
+      ]
+    },
+    {
+      "modelName": "2 Bed/2 Bath",
+      "rentLabel": "$1,600 – $1,750",
       "details": [
         "2 beds",
         "2 baths",
-        "1,045 sq ft",
-        "$450 deposit",
-        "Not Available"
+        "1,100 – 1,250 sq ft",
+        "12 Month Lease",
+        "Available Soon"
       ],
-      "leaseOptions": "$450 deposit,\n\t\t\t\t\t\t\t\tNot Available",
-      "availability": "",
-      "units": []
-    },
-    {
-      "modelName": "Cordova",
-      "rentLabel": "Call for Rent",
-      "details": [
-        "3 beds",
-        "2 baths",
-        "1,319 sq ft",
-        "$450 deposit",
-        "Not Available"
-      ],
-      "leaseOptions": "$450 deposit,\n\t\t\t\t\t\t\t\tNot Available",
+      "leaseOptions": "12 Month Lease,\n\t\t\t\t\t\t\t\tAvailable Soon",
       "availability": "",
       "units": []
     }
   ],
-  "scrapedAt": "2021-07-16T21:01:12.172Z",
+  "scrapedAt": "2021-11-27T12:04:06.752Z",
   "photos": [
-    "https://images1.apartments.com/i2/EINbwwVCywBvRzfr0wOeSNFQ6jSQJc4UezLuLO52rS4/111/advenir-at-biscayne-shores-miami-fl-open-concept-layout-living-room-and-kitc.jpg?p=1",
-    "https://images1.apartments.com/m2/WSGxFMZ418LzK9QvL24lEEUeqG4Yp-GL0DvZ_XFBqjM/H420W630/advenir-at-biscayne-shores-miami-fl-map-image-of-the-property.jpg?p=1",
-    "https://images1.apartments.com/i2/HDQ2izk8FCyQ0-8Fq2Ck0bQTwCc-Y4HgzWPjuyQwgv0/117/advenir-at-biscayne-shores-miami-fl-fully-equipped-kitchen-with-oven-range-a.jpg?p=1",
-    "https://images1.apartments.com/i2/ejnF5a-RJCOTbORTa08V-HuRKeqAZPzUpx9HRjTChPA/117/advenir-at-biscayne-shores-miami-fl-fully-equipped-kitchen-with-dishwasher-o.jpg?p=1",
-    "https://images1.apartments.com/i2/OFRv1Hy3RBPenUYtmgQJ29EkZQAkqCmlMeH5KsPIjz0/117/advenir-at-biscayne-shores-miami-fl-fully-equipped-kitchen-with-dishwasher-o.jpg?p=1"
+    "https://images1.apartments.com/i2/cS0Cu8ytY9zn8aI0V3DcsPiSca-7KgPPd-tOowXs5Uw/111/sobe-apartment-rentals-miami-beach-fl-primary-photo.jpg?p=1",
+    "https://images1.apartments.com/m2/ogrZ5C9tUeyJJw1Rg_NLfNm3O6sorfEMC1OyLLDgLko/H330W495/sobe-apartment-rentals-miami-beach-fl-map-image-of-the-property.jpg?p=1",
+    "https://images1.apartments.com/i2/xhlEsuSaTc0Oc7ZA8jNyLrpMwmkgkgE3jW9WzfJJ0bM/117/sobe-apartment-rentals-miami-beach-fl-building.jpg?p=1",
+    "https://images1.apartments.com/i2/PGbG-MlQgqD0TytUnv7fuU0nlSDJJqx8_-MoePj0CcA/117/sobe-apartment-rentals-miami-beach-fl-bedroom.jpg?p=1",
+    "https://images1.apartments.com/i2/DG2gCa0vZy9JTfjuvPmv23hFqCIVh-iEYiQyd5vxpx8/117/sobe-apartment-rentals-miami-beach-fl-bedroom.jpg?p=1"
   ]
 }
 ```
