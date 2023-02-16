@@ -55,8 +55,10 @@ The actor optimized to run blazing fast and scrape many as listings as possible.
 {
     "startUrls": [
         "https://www.apartments.com/sobe-apartment-rentals-miami-beach-fl/26xc7jb/",
-        "https://www.apartments.com/apartments/miami-fl/student-housing/"
+        "https://www.apartments.com/apartments/miami-fl/student-housing/",
+        "https://www.apartments.com/?sk=544b92fe1f766950d57299dc624e9ff9&bb=0nijpwq7qH0t1s0oB"
     ],
+    "search": "new york",
     "proxy": {
         "useApifyProxy": true
     },
