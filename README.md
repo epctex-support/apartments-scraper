@@ -24,7 +24,7 @@ This scraper is under active development. If you have any feature requests you c
 
 ## Input Parameters
 
-The input of this scraper should be JSON containing the list of pages on Apartments that should be visited. Required fields are:
+The input of this scraper should be JSON containing the list of pages on Apartments that should be visited. Possible fields are:
 
 | Field                | Type    | Description                                                                                               |
 | -------------------- | ------- | --------------------------------------------------------------------------------------------------------- |
@@ -37,7 +37,7 @@ The input of this scraper should be JSON containing the list of pages on Apartme
 
 This solution requires the use of **Proxy servers**, either your own proxy servers or you can use <a href="https://www.apify.com/docs/proxy">Apify Proxy</a>.
 
-##### Tip
+### Tip
 
 When you want to have a scrape over a specific listing URL, just copy and paste the link as one of the **startUrl**.
 
