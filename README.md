@@ -1,3 +1,5 @@
+[https://apify.com/epctex/apartments-scraper](https://apify.com/epctex/apartments-scraper?fpr=yhdrb)
+
 # Actor - Apartments Scraper
 
 ## Apartments scraper
@@ -8,13 +10,13 @@ The Apartments data scraper supports the following features:
 
 - Scrape any address you would like to get - You can search for a specific location and scrape the results accordingly.
 
-- Apply any of the filters - You can apply any filter that provided by the website.
+- Apply any of the filters - You can apply any filter provided by the website.
 
-- Scrape property details - You can target any of the property detail link.
+- Scrape property details - You can target any of the property detail links.
 
 - Limit the results by page or amount of property. - If you don't want to get all the results but a specific amount you can limit it.
 
-## Bugs, fixes, updates and changelog
+## Bugs, fixes, updates, and changelog
 
 This scraper is under active development. If you have any feature requests you can create an issue from [here](https://github.com/epctex/apartments-scraper/issues).
 
@@ -30,7 +32,7 @@ The input of this scraper should be JSON containing the list of pages on Apartme
 | -------------------- | ------- | --------------------------------------------------------------------------------------------------------- |
 | startUrls            | Array   | (optional) List of Apartments URLs. You should only provide list or property detail URLs                  |
 | maxItems             | Integer | (optional) You can limit scraped properties. This should be useful when you search through the big lists. |
-| endPage              | Integer | (optional) Final number of page that you want to scrape. Default is `Infinite`.                           |
+| endPage              | Integer | (optional) Final number of pages that you want to scrape. The default is `Infinite`.                           |
 | search               | String  | (optional) Location keyword that you would like to search the properties in.                              |
 | proxy                | Object  | Proxy configuration                                                                                       |
 | extendOutputFunction | String  | (optional) Function that takes a JQuery handle ($) as argument and returns object with data               |
@@ -39,15 +41,15 @@ This solution requires the use of **Proxy servers**, either your own proxy serve
 
 ### Tip
 
-When you want to have a scrape over a specific listing URL, just copy and paste the link as one of the **startUrl**.
+When you want to scrape over a specific listing URL, just copy and paste the link as one of the **startUrl**.
 
 If you would like to scrape only the first page of a list then put the link for the page and have the `endPage` as 1.
 
-With the last approach that explained above you can also apply any of the filters to the search results. Go to Apartments.com, search for a location, apply filters and copy/paste the link as **startUrl**.
+With the last approach explained above you can also apply any of the filters to the search results. Go to Apartments.com, search for a location, apply filters, and copy/paste the link as **startUrl**.
 
 ### Compute Unit Consumption
 
-The actor optimized to run blazing fast and scrape many as listings as possible. Therefore, it forefronts all listing detail requests. If actor doesn't block very often it'll scrape 100 listings in 1 minutes with ~0.03-0.04 compute units.
+The actor is optimized to run blazing fast and scrape many as listings as possible. Therefore, it forefronts all listing detail requests. If the actor doesn't block very often it'll scrape 100 listings in 1 minute with ~0.03-0.04 compute units.
 
 ### Apartments Scraper Input example
 
@@ -72,13 +74,13 @@ The actor optimized to run blazing fast and scrape many as listings as possible.
 During the run, the actor will output messages letting you know what is going on. Each message always contains a short label specifying which page from the provided list is currently specified.
 When items are loaded from the page, you should see a message about this event with a loaded item count and total item count for each page.
 
-If you provide incorrect input to the actor, it will immediately stop with failure state and output an explanation of what is wrong.
+If you provide incorrect input to the actor, it will immediately stop with a failure state and output an explanation of what is wrong.
 
 ## Apartments Export
 
 During the run, the actor stores results into a dataset. Each item is a separate item in the dataset.
 
-You can manage the results in any languague (Python, PHP, Node JS/NPM). See the FAQ or <a href="https://www.apify.com/docs/api" target="blank">our API reference</a> to learn more about getting results from this Apartments actor.
+You can manage the results in any language (Python, PHP, Node JS/NPM). See the FAQ or <a href="https://www.apify.com/docs/api" target="blank">our API reference</a> to learn more about getting results from this Apartments actor.
 
 ## Scraped Apartments Properties
 
@@ -466,4 +468,4 @@ The structure of each item in Apartments listings looks like this:
 ```
 
 ## Contact
-Please visit us through [epctex.com](https://epctex.com) to see all the products that is available for you. If you are looking for any custom integration or so, please reach out to us through the chat box in [epctex.com](https://epctex.com). In need of support? [devops@epctex.com](mailto:devops@epctex.com) is at your service.
+Please visit us through [epctex.com](https://epctex.com) to see all the products that are available for you. If you are looking for any custom integration or so, please reach out to us through the chat box in [epctex.com](https://epctex.com). In need of support? [devops@epctex.com](mailto:devops@epctex.com) is at your service.
